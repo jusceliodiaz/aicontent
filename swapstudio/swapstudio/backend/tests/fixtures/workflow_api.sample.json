@@ -1,0 +1,10 @@
+{
+  "129": {"class_type": "RandomNoise", "_meta": {"title": "IN_SEED"}, "inputs": {"noise_seed": 1}},
+  "133": {"class_type": "PrimitiveFloat", "_meta": {"title": "IN_DURATION"}, "inputs": {"value": 10}},
+  "155": {"class_type": "MiniMaxH3ReferenceToVideo", "_meta": {"title": "IN_PROMPT"},
+          "inputs": {"text": "old prompt", "mode": "match", "clip": ["128", 0], "width": ["161", 0]}},
+  "159": {"class_type": "LoadImage", "_meta": {"title": "IN_IMAGE"}, "inputs": {"image": "old.png"}},
+  "163": {"class_type": "VHS_LoadVideo", "_meta": {"title": "IN_VIDEO"}, "inputs": {"video": "old.mp4", "force_rate": 0}},
+  "151": {"class_type": "VHS_VideoCombine", "_meta": {"title": "OUT_VIDEO"}, "inputs": {"filename_prefix": "video", "images": ["122", 0]}},
+  "124": {"class_type": "BasicScheduler", "_meta": {"title": "BasicScheduler"}, "inputs": {"scheduler": "simple", "steps": 20, "denoise": 1, "model": ["162", 0]}}
+}

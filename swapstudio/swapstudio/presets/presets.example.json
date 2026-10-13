@@ -1,0 +1,18 @@
+{
+  "characters": [
+    {
+      "id": "pinup-cavewoman",
+      "name": "Pin-up cavewoman",
+      "file": "characters/pinup_cavewoman.png",
+      "description": "red pin-up updo, freckles, white one-shoulder dress with jagged hem, large white bead necklace"
+    }
+  ],
+  "videos": [
+    {
+      "id": "street-dance",
+      "name": "Street dance",
+      "file": "videos/street_dance.mp4",
+      "target": "the woman dancing in the center"
+    }
+  ]
+}

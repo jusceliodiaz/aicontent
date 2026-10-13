@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+backend/.env
+backend/data/
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+presets/characters/
+presets/videos/
+presets/presets.json
+workflows/character_swap.api.json

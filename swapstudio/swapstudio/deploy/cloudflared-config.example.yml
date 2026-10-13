@@ -1,0 +1,9 @@
+# ~/.cloudflared/config.yml  (Windows: %USERPROFILE%\.cloudflared\config.yml)
+# Only the FastAPI port is published. ComfyUI (8188) is never in this file.
+tunnel: swapstudio
+credentials-file: /home/YOU/.cloudflared/<TUNNEL-ID>.json
+
+ingress:
+  - hostname: swap.seusite.com
+    service: http://127.0.0.1:8000
+  - service: http_status:404

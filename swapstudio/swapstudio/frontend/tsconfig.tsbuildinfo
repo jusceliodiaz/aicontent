@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/api.ts","./src/main.tsx","./src/components/AccessGate.tsx","./src/components/AssetPicker.tsx","./src/components/CompareView.tsx","./src/components/Gallery.tsx","./src/components/JobView.tsx","./src/components/NewJobForm.tsx"],"version":"5.9.3"}
