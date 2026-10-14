@@ -45,11 +45,24 @@
   const videos = document.querySelectorAll('video[data-autoplay]');
   if (reduce) videos.forEach((v) => (v.controls = true));
   else if ('IntersectionObserver' in window) {
+    // In-App-Browser (LinkedIn) und Stromsparmodus blockieren Autoplay: beim ersten Tippen erneut versuchen
+    const visible = new Set();
+    let unlockArmed = false;
+    const play = (v) => v.play().catch(() => {
+      if (unlockArmed) return;
+      unlockArmed = true;
+      const unlock = () => visible.forEach((x) => x.play().catch(() => {}));
+      ['touchstart', 'pointerdown'].forEach((t) => addEventListener(t, unlock, { once: true, passive: true }));
+    });
     const vo = new IntersectionObserver((entries) => entries.forEach((e) => {
       const v = e.target;
-      if (e.isIntersecting) v.play().catch(() => {}); else v.pause();
+      if (e.isIntersecting) { visible.add(v); play(v); } else { visible.delete(v); v.pause(); }
     }), { threshold: 0.25 });
-    videos.forEach((v) => vo.observe(v));
+    videos.forEach((v) => {
+      v.muted = true; v.defaultMuted = true; v.playsInline = true;
+      v.setAttribute('webkit-playsinline', '');
+      vo.observe(v);
+    });
   }
 
   /* ---------- Vorher/Nachher-Regler ---------- */
