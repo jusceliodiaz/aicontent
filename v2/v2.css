@@ -66,7 +66,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   list-style: none; margin: 0; padding: 0;
   display: grid; grid-template-columns: repeat(var(--cols), 1fr);
   grid-auto-rows: calc(100vw / var(--cols));
-  grid-auto-flow: dense; gap: 1px; background: #000;
+  grid-auto-flow: dense; gap: 0; background: #000;
 }
 .t { grid-column: span var(--w); grid-row: span var(--h); position: relative; overflow: hidden; background: #151513; }
 .t[hidden] { display: none; }
@@ -74,7 +74,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (max-width: 640px) { :root { --cols: 2; } .t { grid-column: span var(--mw); grid-row: span var(--mh); } }
 
 .t-open { position: absolute; inset: 0; display: block; width: 100%; height: 100%; cursor: none; text-align: left; }
-.t picture, .t img, .t video { width: 100%; height: 100%; object-fit: cover; }
+.t picture, .t img, .t video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .t img, .t video { transition: transform 900ms var(--ease), filter 400ms var(--ease); }
 .t-open:hover img, .t-open:hover video, .t-open:focus-visible img { transform: scale(1.035); }
 
@@ -343,8 +343,8 @@ main { padding-top: var(--bar-h); }
 .grid .t-cta .t-cta-t { font-size: clamp(0.9rem, 1.05vw, 1.25rem); overflow-wrap: normal; hyphens: none; }
 /* Filter "Video": nur die Videos, groß */
 .grid[data-f="video"] .t[data-cat="video"] { --w: 6; --h: 5; --tw: 6; --th: 5; --mw: 3; --mh: 3; }
-/* Filter "Bilder": gleichmäßiges Quadratraster, nichts wird beschnitten */
-.grid[data-f="figur"] .t img, .grid[data-f="figur"] .t video { object-fit: contain; background: #0E0E0D; }
+/* Filter "Bilder": gleichmäßiges Quadratraster, ohne Ränder */
+.grid[data-f="figur"] .t img, .grid[data-f="figur"] .t video { object-fit: cover; }
 .grid[data-f="figur"] .t-open:hover img { transform: none; }
 /* Filter "Video": 4 pro Zeile, Videos vollständig, Platzhalter */
 .grid[data-f="video"] .t video { object-fit: contain; background: #0E0E0D; }
