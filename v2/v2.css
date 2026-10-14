@@ -274,6 +274,7 @@ main { padding-top: var(--bar-h); }
 .pg-no { font: 500 0.75rem/1 var(--mono); color: var(--signal); }
 .pg-h h2 { margin: 0; font-weight: 800; font-stretch: 125%; letter-spacing: -0.04em; line-height: 0.95; font-size: clamp(1.8rem, 3.6vw, 3.4rem); }
 .pg-h p { margin: 0; color: var(--muted); font-size: 1rem; }
+.pg-h p.pg-goal { color: var(--paper); font-weight: 800; font-stretch: 112%; letter-spacing: -0.02em; line-height: 1.15; font-size: clamp(1.3rem, 2vw, 2rem); }
 @media (max-width: 760px) { .pg-h { grid-template-columns: 1fr; } }
 
 .pg-grid { display: grid; gap: 1px; background: #000; }
